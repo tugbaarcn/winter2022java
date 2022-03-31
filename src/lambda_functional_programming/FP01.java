@@ -45,6 +45,9 @@ public class FP01 {
         getMinimumEvenGreaterThanSeven02(l);//8
         getMinimumEvenGreaterThanSeven03(l);
         halfOfDistinctElementsGreaterThanFive(l);
+        System.out.println();
+        printSumOfDistinctEvenElements(l);
+        printProductOfCubesOfDistinctEvenElements(l);
 
 
     }
@@ -147,4 +150,38 @@ public class FP01 {
       List<Double> result =  list.stream().distinct().filter( t -> t > 5).map( t -> t / 2.0).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
       System.out.println(result);
     }
+
+    //9)Create a method to calculate the sum of the squares of distinct even elements
+    // stream, distinct, filter, map, reduce
+    public static void printSumOfDistinctEvenElements(List<Integer> list){
+      Integer sum =  list.stream().distinct().filter( t -> t % 2 == 0).map( t -> t*t).reduce(0, (t,u) -> t + u);
+        System.out.println(sum);
+    }
+
+    //10)Create a method to calculate the product of the cubes of distinct even elements
+    public static void printProductOfCubesOfDistinctEvenElements(List<Integer> list){
+       Integer product = list.stream().distinct().filter( t -> t % 2 ==0).map( t -> t * t * t).reduce(1, (t,u) -> t * u );
+        System.out.println(product);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
