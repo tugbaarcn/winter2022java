@@ -30,4 +30,8 @@ public class Utils {
         return x / 2.0;
     }
 
+    public static char getLastChar(String str){
+       return str.charAt(str.length()-1) ;
+    }
+
 }
